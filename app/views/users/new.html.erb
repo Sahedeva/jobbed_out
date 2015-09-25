@@ -1,1 +1,20 @@
-new.html.erb
+<h1>Create New Job Seeker</h1>
+<br>
+<%= form_for @user do |f| %>
+	<%= f.text_field :first_name, :placeholder => "First Name" %>
+	<%= f.text_field :last_name, :placeholder => "Last Name" %>
+	<%= f.text_field :email, :placeholder => "E-mail" %>
+	<div class="field">
+		<br>
+   <%= f.label :password %><br />
+   <%= f.password_field :password %>
+   <br>
+	</div>
+	<div class="field">
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %>
+  <br>
+	</div>
+
+	<%= f.submit "Submit" %>
+	<% end %>
