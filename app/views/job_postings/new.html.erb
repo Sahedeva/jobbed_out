@@ -1,10 +1,12 @@
+<% if @job.errors.present? %>
+	<p><%= @job.errors.full_messages.first %></p>
+<% end %>
 <h1>Create New Job Listing</h1>
 <br>
 <%= form_for @job do |f| %>
 	<%= f.text_field :company_name, :placeholder => "Company" %>
 	<%= f.text_field :job_title, :placeholder => "Job title" %>
 	<%= f.text_field :posting_url, :placeholder => "Job Url" %>
-	<% f.user_id = current_user.id %>
 	<%= f.submit "Submit" %>
 <% end %>
 

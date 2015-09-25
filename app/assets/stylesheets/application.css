@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ body {
+ 	background-image: url(http://www.avjobseekers.com/i/happy_job_seekers7.jpg);
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+ 	background-color: beige;
+ }
+
+ h1 {
+ 	color: green;
+ }

@@ -1,11 +1,13 @@
 <h1>Jobbed Out</h1>
-
 <ul>
-	<% @job_listing.each do |job| %>
+	<% @postings.each do |x| %>
 	<li>
-		<h3><%= job.company_name %></h3>
-		<h4><%= job.job_title %></h4>
-		<h5><%= job.posting_url %></h5>
+		<h3><%= x.company_name %></h3>
+		<h4><%= x.job_title %></h4>
+		<h5><%= x.posting_url %></h5>
 	</li>
 <% end %>
-</ul>
+</ul> 
+
+
+

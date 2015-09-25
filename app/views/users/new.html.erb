@@ -1,3 +1,6 @@
+<% if @user.errors.present? %>
+	<p><%= @user.errors.full_messages.first %></p>
+<% end %>
 <h1>Create New Job Seeker</h1>
 <br>
 <%= form_for @user do |f| %>
