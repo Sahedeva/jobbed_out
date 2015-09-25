@@ -2,23 +2,24 @@ class SessionController < ApplicationController
 
 	#login
 	def new
-
+		@user = User.new
 	end
 
 	#login
 	def create
 
-		if login(params[:email], params[:password]) 
-			redirect_back_or_to '/'
+		if @user = login(params[:email], params[:password]) 
+			redirect_back_or_to (:users) #notice: 'Login successful')
 		else
-			render :new
+			flash.now[:alert]='Login failed'
+			render action: 'new'
 		end
 	end
 
 	#logout
 	def destroy
 		logout
-		redirect_to '/'
+		redirect_to (:user) # notice: 'Logged out!')
 	end
 
 end

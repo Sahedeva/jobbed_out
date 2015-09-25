@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
 
   resources :users, :except => [:index, :edit, :update, :destroy]
+  resources :job_postings, :except => [:index, :edit, :update, :destroy]
+  resources :comments, :except => [:index, :edit, :update, :destroy]
 
   #note: new and create -- login in  destroy -- logout
   resource :session, :only => [:new, :create, :destroy]
 
+  get 'login' => 'session#new', :as => :login
+  post 'logout' => 'session#destroy', :as => :logout
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
