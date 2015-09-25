@@ -2,9 +2,9 @@ User.destroy_all
 JobPosting.destroy_all
 Comment.destroy_all
 
-user = User.create([{first_name: "Mickey", last_name: "Mouse", email: "mickeymouse@email.com", user_id: 1},
-					first_name: "Minnie", last_name: "Mouse", email: "minniemouse@email.com", user_id: 2},
-					{first_name: "Donald", last_name: "Duck", email: "donaldduck@email.com", user_id: 3}])
+user = User.create([{first_name: "Mickey", last_name: "Mouse", email: "mickeymouse@email.com"},
+					{first_name: "Minnie", last_name: "Mouse", email: "minniemouse@email.com",},
+					{first_name: "Donald", last_name: "Duck", email: "donaldduck@email.com"}])
 
 jop_posting = JobPosting.create([{company_name: "Disney", job_title: "Cartoon Character", posting_url: "http://disneycareers.com/en/default/", user_id: 1},
 						{company_name: "Pixar", job_title: "Animated Star", posting_url: "http://www.pixar.com/careers", user_id: 2},
