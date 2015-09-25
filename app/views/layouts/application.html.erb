@@ -10,10 +10,12 @@
 	<div id="nav">
     <% if current_user %>
       <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+      <%= link_to "Job Posting", new_job_posting_path %>
       <%= link_to "Logout", :logout, method: :post %>
     <% else %>
       <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
+      <%= link_to "Login", :login %> | 
+      <%= link_to "Job Posting", new_job_posting_path %>
     <% end %>
   </div>
   <div>
