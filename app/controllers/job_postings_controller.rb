@@ -1,4 +1,7 @@
 class JobPostingsController < ApplicationController
+	
+before_filter :require_login
+
 	def show
 		@job = JobPosting.find(params[:id])
 	end
@@ -24,4 +27,12 @@ class JobPostingsController < ApplicationController
 	def job_params
 		params.require(:job_posting).permit(:company_name,:job_title,:posting_url,:user_id)
 	end
+
+private
+
+  def require_login
+    unless current_user
+      redirect_to root_url, notice: 'You need to be logged in to post!'
+    end
+  end
 end
