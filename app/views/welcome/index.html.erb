@@ -5,7 +5,7 @@
 	<li>
 		<h3><%= x.company_name %></h3>
 		<h4><%= x.job_title %></h4>
-		<h5><a href="<%= x.posting_url %>"></a></h5>
+		<h5><%= link_to x.posting_url, x.posting_url %></h5>
 		<% if x.date_time == nil %>
 			<p>No date/time stamp</p>
 			<% else %>
