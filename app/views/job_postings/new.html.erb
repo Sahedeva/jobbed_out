@@ -3,6 +3,9 @@
 <% end %>
 <h1>Create New Job Listing</h1>
 <br>
+<p>Welcome <%= @current_user.first_name %> with ID of <%= @current_user.id %></p>
+<% @job.user_id = @current_user.id %>
+<p>The user_id for the posting is <%= @job.user_id %></p>
 <%= form_for @job do |f| %>
 	<%= f.text_field :company_name, :placeholder => "Company" %>
 	<%= f.text_field :job_title, :placeholder => "Job title" %>

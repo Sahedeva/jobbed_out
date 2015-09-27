@@ -5,11 +5,13 @@ class JobPostingsController < ApplicationController
 
 	def new
 		@job = JobPosting.new
+		current_user
 	end
 
 	def create
 		@job = JobPosting.new(job_params)
-
+		@job.user_id = current_user.id
+		@job.date_time = Time.now
 		if @job.save
 			redirect_to @job
 		else
