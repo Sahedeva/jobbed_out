@@ -44,7 +44,7 @@
 	<% end %>
 	<%= form_for @comment do |f| %>
 	<%= f.text_field :comment, :placeholder => "Comment" %>
-	<%= f.number_field. :job_posting_id, :value => x.id %>
+	<%= f.number_field :job_posting_id, :value => x.id %>
 	<%= f.submit "Submit" %>
 <% end %>
 

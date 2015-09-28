@@ -6,38 +6,6 @@
 		<h3><%= x.company_name %></h3>
 		<h4><%= x.job_title %></h4>
 		<h5><%= link_to x.posting_url, x.posting_url %></h5>
-		<% if x.date_time == nil %>
-			<p>No date/time stamp</p>
-			<% else %>
-			<p><%= x.date_time %></p>
-		<% end %>
-		<% if x.user_id == nil %>
-			<p>No User Id</p>
-			<% else %>
-			<p>Posted by <%= x.user_id %></p>
-		<% end %>
 	</li>
-	
-	<% if @comments.where("job_posting_id = ?", x.id).empty? == true %>
-		<p>No comments</p>
-		<% else %>
-		<p><%= x.id %></p>
-			<% @comments.where("job_posting_id = ?", x.id).each do |y| %>
-				<li>
-					<p>Comment</p>
-					<h3><%= y.comment %></h3>
-					<% if y.date_time == nil %>
-					<p>No date/time stamp</p>
-						<% else %>
-						<p><%= y.date_time %></p>
-					<% end %>
-					<% if y.user_id == nil %>
-					<p>No User Id</p>
-						<% else %>
-						<p>Posted by <%= y.user_id %></p>
-					<% end %>
-				</li>
-			<% end %>
-	<% end %>
 	<% end %>
 </ul> 
