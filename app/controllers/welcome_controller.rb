@@ -4,4 +4,6 @@ class WelcomeController < ApplicationController
 		@postings = JobPosting.all
 		@comments = Comment.all
 	end
+
+
 end

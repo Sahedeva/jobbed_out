@@ -1,9 +1,11 @@
-class CommentController < ApplicationController
+class CommentsController < ApplicationController
 
 before_filter :require_login
 
 	def show
-			
+			@comment = Comment.find(params[:id])
+			@users = User.all
+			@postings = JobPosting.all
 	end
 
 	def new
@@ -17,8 +19,8 @@ before_filter :require_login
 	def create
 		@comment = Comment.new(comment_params)
 		@comment.user_id = current_user.id
-		@comment.job_posting_id = @post_id
 		@comment.date_time = Time.now
+		@comment.job_posting_id = 6
 		if @comment.save
 			redirect_to @comment
 		else
@@ -29,7 +31,7 @@ before_filter :require_login
 	private
 
 	def comment_params
-		params.require(:comment).permit(:comment,:date_time,:job_posting_id,:user_id)
+		params.require(:comment).permit(:comment,:date_time,:user_id,:job_posting_id)
 	end
 
 	private
@@ -39,5 +41,4 @@ before_filter :require_login
       redirect_to root_url, notice: 'You need to be logged in to post!'
   	end
   end
-
 end
