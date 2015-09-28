@@ -20,7 +20,6 @@ before_filter :require_login
 		@comment = Comment.new(comment_params)
 		@comment.user_id = current_user.id
 		@comment.date_time = Time.now
-		@comment.job_posting_id = 6
 		if @comment.save
 			redirect_to @comment
 		else

@@ -1,9 +1,10 @@
 <h1>Successfully added your comment</h1>
 <br>
 <% user_id = @comment.user_id %>
-<% job_posting_id = @comment.job_posting_id %>
+<% job_id = @comment.job_posting_id %>
+<p><%= @comment.id %></p>
 <% @user = User.find(user_id) %>
-<% @job = JobPosting.find(job_posting_id) %>
+<% @job = JobPosting.find(17) %>
 
 <p><%= @job.company_name %></p>
 <p><%= @job.job_title %></p>

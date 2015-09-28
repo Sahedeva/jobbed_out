@@ -42,9 +42,9 @@
 				</li>
 			<% end %>
 	<% end %>
-	<% @comment.job_posting_id = x.id %>
 	<%= form_for @comment do |f| %>
 	<%= f.text_field :comment, :placeholder => "Comment" %>
+	<%= f.number_field. :job_posting_id, :value => x.id %>
 	<%= f.submit "Submit" %>
 <% end %>
 
